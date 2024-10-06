@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráficos com Chart.JS</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<body>
+
+    <div class="titulos">
+        <h1> Gráficos com Chart.JS</h1>
+        <h3>Pesquisa e Inovação</h3>
+    </div>
+
+    <div class="charts">
+        <div>
+            <canvas id="myChart" style="position: relative; width: 90vh; height: 90vm;"></canvas>
+        </div>
+
+
+        <div>
+            <canvas id="myChart2" style="position: relative; width: 90vh; height:90vm;"></canvas>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
+
+<script>
+    const ctx = document.getElementById('myChart');
+
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['12:00', '13:00', '14:00', '15:00', '16:00', '17:00'],
+            datasets: [
+                {
+                    label: 'Temperatura',
+                    data: [30, 29, 28, 25, 22, 23],
+                    borderWidth: 2,
+                    borderColor: 'rgb(255,20,147)',
+                    pointBackgroundColor: 'rgb(255,20,147)',
+                    backgroundColor: 'rgb(255,20,147)'
+
+
+                },
+
+                {
+                    label: 'Umidade',
+                    data: [80, 82, 80, 85, 80, 83],
+                    borderWidth: 2,
+                    borderColor: 'rgb(0,191,255)',
+                    pointBackgroundColor: 'rgb(0,191,255)',
+                    backgroundColor: 'rgb(0,191,255)'
+                }
+
+            ]
+        },
+
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+
+</script>
+
+<script>
+
+    const ctx2 = document.getElementById('myChart2');
+
+    new Chart(ctx2, {
+        type: 'bar',
+        data: {
+            labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
+            datasets: [
+                {
+                    label: 'Temperatura Média',
+                    data: [22, 24, 27, 23, 20, 18],
+                    borderWidth: 2,
+                    borderColor: 'rgb(255,20,147)',
+                    pointBackgroundColor: 'rgb(255,20,147)',
+                    backgroundColor: 'rgb(255,20,147)'
+
+
+                },
+
+                {
+                    label: 'Umidade Média',
+                    data: [90, 89, 93, 87, 88, 82],
+                    borderWidth: 2,
+                    borderColor: 'rgb(0,191,255)',
+                    pointBackgroundColor: 'rgb(0,191,255)',
+                    backgroundColor: 'rgb(0,191,255)'
+                }
+
+            ]
+        },
+
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
